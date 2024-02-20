@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+ mypage
+{% endblock title %}
+
+{% block content %}
+
+<h1> mypage</h1>
+
+<h2>LIST OF MOVIES</h2>
+{%for i in movie_list %}
+
+{% if i == favourite_movie %}
+<li>{{i}} <span class="bg-danger badge text-white">fav</span></li>
+
+{% else %}
+<li>{{i}}</li>
+{% endif %}
+
+{% endfor %}<br>
+
+{{favourite_movie}}
+
+<script src="{%static%} 'main.js' "></script>
+{% endblock content %}
